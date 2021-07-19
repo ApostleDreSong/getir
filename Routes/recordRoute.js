@@ -39,7 +39,6 @@ router.post('/', async (req, res) => {
         return res.status(200).send(result);
     }
     //Count Validation
-
     if (minCount > maxCount) {
         code = 4;
         msg = "Minimum count value should not be greater than maximum count value";
@@ -50,7 +49,6 @@ router.post('/', async (req, res) => {
         return res.status(200).send(result);
     }
     //Date Validation
-
     if (start > end) {
         code = 5;
         msg = "start date should not be greater than end date";

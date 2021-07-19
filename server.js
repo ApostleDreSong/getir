@@ -24,7 +24,7 @@ app.use((req, res) => {
 });
 
 module.exports = app;
-// The supertest module will bind the App to random ports in the test environments
+// The supertest module in the test files will bind the App to random ports in the test environments
 // so we do not need to explicitly declare a port for the App in Test environment
 
 if (process.env.NODE_ENV !== "test") {
