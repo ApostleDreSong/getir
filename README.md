@@ -6,8 +6,8 @@ Please find below the following deliverables:
 2. The public endpoint URL of the deployed API - https://getir-dami.herokuapp.com/records
 
 # To Run
-1. npm install
-2. npm run dev for building locally or npm run start in production
+1. "npm install"
+2. "npm run dev" for building locally or "npm run start" in production
 
 # To Test
-npm run test
+'npm run test" (after running "npm install")
