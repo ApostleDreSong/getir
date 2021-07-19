@@ -5,9 +5,6 @@ var records = require("../Models/records");
 router.post('/', async (req, res) => {
     const { startDate, endDate, minCount, maxCount } = req.body;
 
-    let code = 0;
-    let msg = "Success";
-
     let start = new Date(startDate);
     let end = new Date(endDate);
 
@@ -57,8 +54,8 @@ router.post('/', async (req, res) => {
     ]
     let response = await records.aggregate(pipeline);
     let result = {
-        code: code,
-        msg: msg,
+        code: 0,
+        msg: "Success",
         records: response
     }
     return res.status(200).send(result);
