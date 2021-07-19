@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "4.17.1",
+    "iyasunday": "^1.0.72",
+    "jest": "^27.0.6",
+    "mongoose": "5.11.8",
+    "supertest": "^6.1.3"
+  },
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "test": "jest --forceExit --detectOpenHandles  --watchAll --maxWorkers=1"
+  },
+  "jest": {
+    "testTimeout": 50000
+  }
+}
