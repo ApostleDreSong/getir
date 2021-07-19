@@ -7,10 +7,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const PORT = process.env.PORT || 8000;
-// Route
+
 const recordRoute = require('./Routes/recordRoute');
 
-// Path
 app.use('/records', recordRoute);
 
 app.use((err, req, res, next) => {
@@ -25,6 +24,9 @@ app.use((req, res) => {
 });
 
 module.exports = app;
-if (process.env.NODE_env !== "test") {
+// The supertest module will bind the App to random ports in the test environments
+// so we do not need to explicitly declare a port for the App in Test environment
+
+if (process.env.NODE_ENV !== "test") {
     app.listen(PORT);
 }

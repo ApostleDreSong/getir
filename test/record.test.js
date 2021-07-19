@@ -45,4 +45,26 @@ describe('Records Endpoint "/records"', () => {
             });
         expect(res.body.msg).toEqual("start date should not be greater than end date");
     });
+    it('should return "Date has to be in the format YYYY-MM-DD" when a start date or end date is not properly formatted', async () => {
+        const res = await request(app)
+            .post('/records')
+            .send({
+                "startDate": "2019-1-26",
+                "endDate": "2018-02-02",
+                "minCount": 2700,
+                "maxCount": 3000
+            });
+        expect(res.body.msg).toEqual("Date has to be in the format YYYY-MM-DD");
+    });
+    it('should return "Count has to be an integer" when count minCount or maxCount is not a number', async () => {
+        const res = await request(app)
+            .post('/records')
+            .send({
+                "startDate": "2019-01-26",
+                "endDate": "2018-02-02",
+                "minCount": "2700",
+                "maxCount": 3000
+            });
+        expect(res.body.msg).toEqual("Count has to be an integer");
+    });
 });
